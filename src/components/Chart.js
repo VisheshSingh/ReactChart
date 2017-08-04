@@ -26,6 +26,13 @@ export class Chart extends Component {
             }//chartData
         }//this.state
     }//constructor
+
+    static defaultProps = {
+        displayTitle: true,
+        displayLegend: true,
+        legendPosition: 'right'
+    }
+
     render() {
         return(
             <div className="Chart">
@@ -34,13 +41,13 @@ export class Chart extends Component {
                     data={this.state.chartData}
                     options={{
                         title: {
-                            display: true,
+                            display: this.props.displayTitle,
                             text: 'Population by Cities in New York',
                             fontSize: 25
                         },
                         legend: {
-                            display: true,
-                            position: 'right'
+                            display: this.props.displayTitle,
+                            position: this.props.legendPosition
                         }
                     }}
                     layout={{ }}
